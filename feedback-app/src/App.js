@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import FeedBackStats from "./components/FeedBackStats";
 import FeedBackData from "./data/FeedBackData";
 import FeedBackList from "./components/FeedBackList";
+import FeedBackForm from "./components/FeedBackForm";
 
 function App() {
   const [feedback, setFeedback] = useState(FeedBackData);
@@ -11,7 +12,7 @@ function App() {
     if (window.confirm('Are you sure you want to delete?')) {
       setFeedback( feedback.filter((item)=>{
         return item.id !== id
-      }) )  
+      }))
     }
   };
 
@@ -19,6 +20,7 @@ function App() {
     <>
       <Header />
       <main className="container">
+        <FeedBackForm />
         <FeedBackStats feedback={feedback} />
         <FeedBackList feedback={feedback} handleDelete={deleteFeedback} />
       </main>
