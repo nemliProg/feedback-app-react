@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       <Header />
-      <main className="container">
+      <main className="container mx-auto">
         <FeedBackForm />
         <FeedBackStats feedback={feedback} />
         <FeedBackList feedback={feedback} handleDelete={deleteFeedback} />
